@@ -1,0 +1,9 @@
+./redis-cli --cluster moveslot 10.0.0.2:6379 --cluster-from b59b60cb12e865497fd095a71ed69731bfcc62da --cluster-to 85aca0a30557185ebb90 --cluster-slots 0
+
+or 
+
+redis-cli --cluster moveslot 10.0.0.2:6379 --cluster-reshardfile ./migrate_these_slots.txt
+
+migrate_these_slots.txt must be of the following form:
+
+slot redis_from_id redis_to_id
